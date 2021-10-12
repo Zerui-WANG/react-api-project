@@ -1,0 +1,7 @@
+.epic {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 512px;
+}
