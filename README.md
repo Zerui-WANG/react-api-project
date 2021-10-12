@@ -1,6 +1,5 @@
 # react-api-project
 
-## APIs
+## API
 
-- https://api.amethyste.moe/
 - https://api.nasa.gov/
