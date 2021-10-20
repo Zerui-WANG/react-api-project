@@ -13,7 +13,6 @@ const Home = () => {
       `https://api.nasa.gov/planetary/apod?api_key=${nasa_api_key}`
     );
     const res = await data.json();
-    console.log(res);
     setImgSrc((img) => (img = res.url));
   };
 
