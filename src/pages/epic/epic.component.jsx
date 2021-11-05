@@ -6,10 +6,8 @@ import "./epic.css";
 
 const Epic = () => {
   return (
-    <div className="epic">
-      <div className="title">
-        <h1>Earth Polychromatic Imaging Camera (EPIC)</h1>
-      </div>
+    <div>
+      <h1>Earth Polychromatic Imaging Camera (EPIC)</h1>
       <EpicCard />
     </div>
   );

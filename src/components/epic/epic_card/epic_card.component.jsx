@@ -1,20 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "react-gallery-carousel";
 
 import "./epic_card.css";
+
+import "react-gallery-carousel/dist/index.css";
 
 const EpicCard = () => {
   const nasa_api_key = process.env.REACT_APP_NASA_API_KEY;
 
-  const [urls, setUrls] = useState("");
+  const [data, setData] = useState({});
+  const [urls, setUrls] = useState([]);
 
   const fetchData = async () => {
     const metadata = await fetch(
       `https://api.nasa.gov/EPIC/api/natural/images?api_key=${nasa_api_key}`
     );
     const jsonData = await metadata.json();
+
+    setData((data) => (data = jsonData));
 
     const date = jsonData[0].date;
     const year = date.substring(0, 4);
@@ -30,7 +35,7 @@ const EpicCard = () => {
         (urls = imgs.map(({ id, img }) => {
           return {
             id: id,
-            url: `https://api.nasa.gov/EPIC/archive/natural/${year}/${month}/${day}/png/${img}.png?api_key=${nasa_api_key}`,
+            src: `https://api.nasa.gov/EPIC/archive/natural/${year}/${month}/${day}/png/${img}.png?api_key=${nasa_api_key}`,
           };
         }))
     );
@@ -41,22 +46,22 @@ const EpicCard = () => {
   }, []);
 
   return (
-    <div className="img">
-      <Carousel autoPlay>
-        {urls !== "" &&
-          urls.map(({ id, url }) => (
+    <div className="carouselContainer">
+      {urls.length > 0 && (
+        <div>
+          <Carousel images={urls} isRLT={true} />
+          {console.log(data[0])}
+          <div className="data">
+            <div>{data[0].caption}</div>
             <div>
-              <img
-                key={id}
-                src={url}
-                alt={`EPIC${id}`}
-                height="512"
-                width="512"
-              />
-              <p>Legend {id}</p>
+              {"centroid coordinates : " +
+                data[0].centroid_coordinates.lat +
+                ", " +
+                data[0].centroid_coordinates.lon}
             </div>
-          ))}
-      </Carousel>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
