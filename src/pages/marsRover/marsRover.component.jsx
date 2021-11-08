@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 
 const MarsRover = () => {
-    const nasa_api_key = process.env.REACT_APP_NASA_API_KEY;
+  const nasa_api_key = process.env.REACT_APP_NASA_API_KEY;
 
   //set the value for the choice of the camera
   const [valueCamera,setValueCamera]=useState('');
