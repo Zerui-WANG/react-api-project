@@ -1,7 +1,32 @@
 .carouselContainer {
-  color: #fff;
-  width: 600px;
+  color: #ffffff;
+  width: 620px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
+  white-space: pre-wrap;
+}
+
+.date {
+  text-align: right;
+}
+
+.caption {
+  margin: 10px;
+}
+
+.data {
+  display: flex;
+  padding: 10px;
+  width: 620px;
+}
+
+.index {
+  font-weight: bold;
+}
+
+.leftCol,
+.midCol,
+.rightCol {
+  padding: 7px;
 }

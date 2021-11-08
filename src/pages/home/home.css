@@ -1,10 +1,6 @@
-body {
+.home-dark {
   background-color: black;
   color: white;
-}
-
-h1 {
-  text-align: center;
 }
 
 .description {
