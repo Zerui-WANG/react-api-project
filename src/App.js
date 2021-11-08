@@ -7,6 +7,7 @@ import Epic from "./pages/epic/epic.component";
 import About from "./pages/about/about.component";
 import Home from "./pages/home/home.component";
 import Navbar from "./components/navbar/navbar.component";
+import MarsRover from "./pages/marsRover/marsRover.component"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route path="/epic">
           <Epic />
+        </Route>
+        <Route path="/marsRover">
+          <MarsRover />
         </Route>
         <Route path="/about">
           <About />
