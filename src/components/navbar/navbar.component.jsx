@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { UserDarkMode } from "../darkmode/userDarkMode";
-import Toggle from "../darkmode/Toggler";
-import { lightTheme, darkTheme } from "../darkmode/Themes";
+import { UserDarkMode } from "../themeContext/userDarkMode";
+import Toggle from "../themeContext/Toggler";
+import { lightTheme, darkTheme } from "../themeContext/Themes";
 
 import "./navbar.css";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "../darkmode/GlobalStyles";
+import { GlobalStyles } from "../themeContext/GlobalStyles";
 
 const Navbar = () => {
   const [theme, themeToggler, mountedComponent] = UserDarkMode();

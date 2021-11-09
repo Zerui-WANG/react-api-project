@@ -1,3 +1,10 @@
 h1 {
   text-align: center;
 }
+
+.epic {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-wrap;
+}

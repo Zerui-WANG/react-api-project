@@ -1,0 +1,15 @@
+.data {
+  display: flex;
+  padding: 10px;
+  width: 700px;
+}
+
+.index {
+  font-weight: bold;
+}
+
+.leftCol,
+.midCol,
+.rightCol {
+  padding: 7px;
+}
