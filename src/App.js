@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Epic from "./pages/epic/epic.component";
-import About from "./pages/about/about.component";
+import VideoImageLibrary from "./pages/videoImagelibrary/videoImageLibrary.component";
 import Home from "./pages/home/home.component";
 import Navbar from "./components/navbar/navbar.component";
 import MarsRover from "./pages/marsRover/marsRover.component"
@@ -20,8 +20,8 @@ function App() {
         <Route path="/marsRover">
           <MarsRover />
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/videoImageLibrary">
+          <VideoImageLibrary />
         </Route>
         <Route path="/">
           <Home />
