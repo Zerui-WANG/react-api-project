@@ -14,7 +14,7 @@ const EpicData = ({ data }) => {
                 data.centroid_coordinates.lat +
                 "\n\t" +
                 data.centroid_coordinates.lon +
-                "\n attitude quarternions : \n\t q0 = " +
+                "\n\n attitude quarternions : \n\t q0 = " +
                 data.attitude_quaternions.q0 +
                 "\n\t q1 = " +
                 data.attitude_quaternions.q1 +
@@ -31,7 +31,7 @@ const EpicData = ({ data }) => {
                 data.dscovr_j2000_position.y +
                 "\n\t z = " +
                 data.dscovr_j2000_position.z +
-                "\n lunar j2000 position : " +
+                "\n\n lunar j2000 position : " +
                 "\n\t x = " +
                 data.lunar_j2000_position.x +
                 "\n\t y = " +

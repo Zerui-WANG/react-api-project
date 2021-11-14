@@ -1,0 +1,14 @@
+.search {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.searchInput {
+  border-radius: 30px;
+  border: none;
+}
+
+.placeholder {
+  text-align: center;
+  margin: 25px auto;
+}

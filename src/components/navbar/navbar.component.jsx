@@ -28,8 +28,8 @@ const Navbar = () => {
           <Link to="/epic" className="navLink">
             Epic
           </Link>
-          <Link to="/about" className="navLink">
-            About
+          <Link to="/VideoImageLibrary" className="navLink">
+            Nasa's Image and Video Library
           </Link>
           <Toggle theme={theme} toggleTheme={themeToggler} />
         </div>

@@ -1,0 +1,16 @@
+.card {
+  margin: 2rem 12rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.nasa_id {
+  text-align: right;
+}
+
+.photographer {
+  text-align: center;
+  font-style: italic;
+}

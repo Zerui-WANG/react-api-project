@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Epic from "./pages/epic/epic.component";
-import About from "./pages/about/about.component";
+import VideoImagelibrary from "./pages/videoImagelibrary/videoImageLibrary.component";
 import Home from "./pages/home/home.component";
 import Navbar from "./components/navbar/navbar.component";
 
@@ -16,8 +16,8 @@ function App() {
         <Route path="/epic">
           <Epic />
         </Route>
-        <Route path="/about">
-          <About />
+        <Route path="/videoImageLibrary">
+          <VideoImagelibrary />
         </Route>
         <Route path="/">
           <Home />

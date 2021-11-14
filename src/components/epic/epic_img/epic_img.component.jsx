@@ -18,6 +18,7 @@ const EpicImg = ({ urls, date, caption }) => {
             isRLT={true}
             hasMediaButton={false}
             hasIndexBoard={false}
+            style={{ height: 650 }}
           />
         </div>
       )}
