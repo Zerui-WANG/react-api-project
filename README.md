@@ -14,7 +14,7 @@ OR
 yarn add react-gallery-carousel
 ```
 
-- React-icons
+- react-icons
 
 ```
 npm install react-icons --save
@@ -24,6 +24,18 @@ OR
 
 ```
 yarn add react-icons
+```
+
+- ReactPlayer
+
+```
+npm install react-player
+```
+
+OR
+
+```
+yarn add react-player
 ```
 
 ## Start

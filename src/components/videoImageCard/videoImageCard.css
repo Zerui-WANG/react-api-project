@@ -79,3 +79,18 @@ a {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+.videoInformation {
+  color: black;
+  font-size: 15px;
+  padding: 20px;
+}
+
+.videoNasa_id {
+  text-align: right;
+}
+
+.videoNasa_id,
+.videoDescription {
+  padding: 15px 0;
+}
