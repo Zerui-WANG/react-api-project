@@ -34,7 +34,7 @@ const Home = () => {
   `;
 
   return (
-    <div>
+    <div className="apodContainer">
       <h1>Astronomy Picture of the Day</h1>
       {imgSrc.length > 1 ? (
         <div>

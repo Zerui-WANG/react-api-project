@@ -14,6 +14,18 @@ OR
 yarn add react-gallery-carousel
 ```
 
+- React-icons
+
+```
+npm install react-icons --save
+```
+
+OR
+
+```
+yarn add react-icons
+```
+
 ## Start
 
 ```
