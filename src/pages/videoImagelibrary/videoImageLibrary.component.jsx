@@ -19,7 +19,7 @@ const VideoImageLibrary = () => {
           `https://images-api.nasa.gov/search?q=${searchText}`
         );
         const jsonData = await fetchedData.json();
-        return jsonData.collection.items.length > 5
+        return jsonData.collection.items.length > 4
           ? jsonData.collection.items.slice(0, 5)
           : jsonData.collection.items;
       }

@@ -7,6 +7,7 @@ import { lightTheme, darkTheme } from "../themeContext/Themes";
 import "./navbar.css";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../themeContext/GlobalStyles";
+import { PacmanLoader } from "react-spinners";
 
 const Navbar = () => {
   const [theme, themeToggler, mountedComponent] = UserDarkMode();
@@ -14,12 +15,13 @@ const Navbar = () => {
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   if (!mountedComponent) return <div />;
+
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
       <div className="nav">
         <Link to="/" className="navLogo">
-          I'm A Logo
+          <PacmanLoader color="#085eda" />
         </Link>
         <div className="navMenu">
           <Link to="/" className="navLink">
