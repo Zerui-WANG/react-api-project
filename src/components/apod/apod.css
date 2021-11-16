@@ -1,0 +1,13 @@
+.description {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.apod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
+}
