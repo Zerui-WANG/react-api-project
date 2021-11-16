@@ -22,9 +22,9 @@ const VideoImageLibrary = () => {
           `https://images-api.nasa.gov/search?q=${searchText}`
         );
         const jsonData = await fetchedData.json();
-        return jsonData.collection.items.length > 4
-          ? jsonData.collection.items.slice(0, 5)
-          : jsonData.collection.items;
+        jsonData.collection.items.length > 4
+          ? setData(jsonData.collection.items.slice(0, 5))
+          : setData(jsonData.collection.items);
       }
     } catch (error) {
       console.log("data fetch error");
@@ -32,11 +32,7 @@ const VideoImageLibrary = () => {
   };
 
   useEffect(() => {
-    const fetchAPI = async () => {
-      const list = await fetchData(searchText);
-      setData(list);
-    };
-    fetchAPI();
+    fetchData(searchText);
   }, [searchText]);
 
   return (

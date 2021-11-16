@@ -2,6 +2,18 @@
 
 ## Extern libraries imports
 
+- React Spinners
+
+```
+npm install --save react-spinners
+```
+
+OR
+
+````
+yarn add react-spinners
+```
+
 - React Gallery Carousel
 
 ```
@@ -54,3 +66,4 @@ yarn start
 - https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
   template example:
   https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name+from+ps&format=json
+````

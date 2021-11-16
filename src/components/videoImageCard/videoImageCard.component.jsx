@@ -24,7 +24,7 @@ const VideoImageCard = ({
     }
   };
 
-  const checkIfImg = (fetchedUrl) => {
+  const checkIfImgVideo = (fetchedUrl) => {
     if (fetchedUrl.length > 1) {
       const sources = fetchedUrl.reduce((result, url) => {
         if (url.split(".").pop() === "jpg") {
@@ -32,30 +32,21 @@ const VideoImageCard = ({
         }
         return result;
       }, []);
-      return sources[0];
-    }
-  };
-
-  const checkIfVideo = (fetchedUrl) => {
-    if (fetchedUrl.length > 1) {
+      setAvailableImgLink(sources[0]);
       const videoSources = fetchedUrl.reduce((result, url) => {
         if (url.split(".").pop() === "mp4") {
           result.push(url);
         }
         return result;
       }, []);
-      return videoSources[0];
+      setAvailableVideoLink(videoSources[0]);
     }
   };
 
   useEffect(() => {
     const fetchData = async () => {
       const fetchedUrl = await fetchUrl();
-      const sources = await checkIfImg(fetchedUrl);
-      const videoSources = await checkIfVideo(fetchedUrl);
-      setAvailableImgLink(sources);
-      setAvailableVideoLink(videoSources);
-      console.log(availableVideoLink);
+      checkIfImgVideo(fetchedUrl);
     };
     fetchData();
   }, [href]);
