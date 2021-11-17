@@ -6,7 +6,7 @@ const MarsRover = () => {
   return (
     <div>
       <h1>Mars Rover Photo</h1>
-      <MarsRoverComp />
+      <MarsRoverComp id = "marsRover"/>
     </div>
   );
 };

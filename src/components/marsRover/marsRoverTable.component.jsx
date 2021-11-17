@@ -6,7 +6,7 @@ const MarsRoverTable = ({
   border}) => {
 
     return (
-        <Table responsive style={{border:border}}>
+        <Table id="roverTable" responsive style={{border:border}}>
         <thead>
           <tr>
             <th></th>

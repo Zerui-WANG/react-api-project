@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
 import MarsRoverDropdown from "./marsRoverDropdown.component";
 import MarsRoverTable from "./marsRoverTable.component";
-
+import "./marsRover_comp.css";
 
 const MarsRoverComp = () => {
   const nasa_api_key = process.env.REACT_APP_NASA_API_KEY;
@@ -59,6 +59,7 @@ const MarsRoverComp = () => {
       <div className="img-rover">
         <p>Here is the lastest picture provided by your selected camera : </p>
         <MarsRoverDropdown handleSelectOnCamera={handleSelectOnCamera} text={valueCamera}/>
+        <br/>
         {valueCamera.length > 0 &&
           dataNotNull ? (
             <div>
