@@ -13,8 +13,10 @@ const Home = () => {
     try {
       const data = await fetch(
         `https://api.nasa.gov/planetary/apod?api_key=${nasa_api_key}`
+        
       );
       const res = await data.json();
+      console.log(res);
       setApod((apod) => (apod = res));
       setImgSrc((img) => (img = res.url));
     } catch (err) {

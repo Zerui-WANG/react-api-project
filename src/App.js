@@ -7,7 +7,9 @@ import Epic from "./pages/epic/epic.component";
 import VideoImageLibrary from "./pages/videoImagelibrary/videoImageLibrary.component";
 import Home from "./pages/home/home.component";
 import Navbar from "./components/navbar/navbar.component";
-import MarsRover from "./pages/marsRover/marsRover.component"
+import MarsRover from "./pages/marsRover/marsRover.component";
+import Exoplanetarchive from "./pages/exoplanetarchive/exoplanetarchive.component";
+
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         </Route>
         <Route path="/videoImageLibrary">
           <VideoImageLibrary />
+        </Route>
+        <Route path="/exoplanetarchive">
+          <Exoplanetarchive />
         </Route>
         <Route path="/">
           <Home />
