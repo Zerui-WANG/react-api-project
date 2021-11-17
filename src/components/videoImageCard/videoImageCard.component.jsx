@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import VideoPlayer from "../videoPlayer/videoPlayer.component";
 
 import "./videoImageCard.css";
 
@@ -10,14 +11,67 @@ const VideoImageCard = ({
   title,
   href,
 }) => {
+  const [availableImgLink, setAvailableImgLink] = useState("");
+  const [availableVideoLink, setAvailableVideoLink] = useState("");
+
+  const fetchUrl = async () => {
+    try {
+      const response = await fetch(`${href}`);
+      const jsonData = await response.json();
+      return jsonData;
+    } catch (error) {
+      console.log("fetch images&videos failed !");
+    }
+  };
+
+  const checkIfImgVideo = (fetchedUrl) => {
+    if (fetchedUrl.length > 1) {
+      const sources = fetchedUrl.reduce((result, url) => {
+        if (url.split(".").pop() === "jpg") {
+          result.push(url);
+        }
+        return result;
+      }, []);
+      setAvailableImgLink(sources[0]);
+      const videoSources = fetchedUrl.reduce((result, url) => {
+        if (url.split(".").pop() === "mp4") {
+          result.push(url);
+        }
+        return result;
+      }, []);
+      setAvailableVideoLink(videoSources[0]);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedUrl = await fetchUrl();
+      checkIfImgVideo(fetchedUrl);
+    };
+    fetchData();
+  }, [href]);
+
   return (
-    <div className="card">
+    <div className="container">
       <h2 className="title">{title}</h2>
-      <div className="nasa_id">{nasa_id}</div>
-      <img src={href} alt={title} className="img" />
-      <div className="location">{location}</div>
-      <div className="description">{description}</div>
-      <div className="photographer">{"By " + photographer}</div>
+      {availableVideoLink !== undefined ? (
+        <div className="videoInformation">
+          <div className="videoLocation">{location}</div>
+          <div className="videoNasa_id">{"NASA ID: " + nasa_id}</div>
+          <VideoPlayer url={availableVideoLink} />
+          <div className="videoDescription">{description}</div>
+        </div>
+      ) : (
+        <div className="card">
+          <img src={availableImgLink} alt={title} className="img" />
+          <div className="overlay">
+            <div className="location">{location}</div>
+            <div className="nasa_id">{"NASA ID: " + nasa_id}</div>
+            <div className="imgDescription">{description}</div>
+            <div className="photographer">{"By " + photographer}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

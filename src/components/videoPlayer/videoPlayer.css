@@ -1,0 +1,9 @@
+.playIcon {
+  width: fit-content;
+  height: 100px;
+  color: #1377b9;
+}
+
+.playIcon:hover {
+  opacity: 0.7;
+}

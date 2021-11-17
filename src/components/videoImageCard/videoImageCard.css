@@ -1,16 +1,96 @@
-.card {
-  margin: 2rem 12rem;
+a {
+  color: gold;
+}
+
+.container {
+  margin: 3rem 10rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-radius: 10px;
 }
 
 .title {
   text-align: center;
+  font-size: 20px;
+  color: black;
+  padding-top: 5px;
 }
 
 .nasa_id {
   text-align: right;
 }
 
+.card {
+  position: relative;
+  width: 100%;
+}
+
 .photographer {
   text-align: center;
   font-style: italic;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #74878d;
+}
+
+.card:hover .overlay {
+  opacity: 0.9;
+}
+
+.location,
+.imgDescription,
+.nasa_id,
+.photographer {
+  font-size: 15px;
+  color: white;
+  padding: 20px;
+}
+
+.imgDescription {
+  max-width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.photographer {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.videoInformation {
+  color: black;
+  font-size: 15px;
+  padding: 20px;
+}
+
+.videoNasa_id {
+  text-align: right;
+}
+
+.videoNasa_id,
+.videoDescription {
+  padding: 15px 0;
 }

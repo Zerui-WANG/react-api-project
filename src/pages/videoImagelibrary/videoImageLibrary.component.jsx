@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import VideoImageCard from "../../components/videoImageCard/videoImageCard.component";
+import { MdImageSearch } from "react-icons/md";
+import { VscRocket } from "react-icons/vsc";
+import { SiNasa } from "react-icons/si";
+import { TiTimesOutline } from "react-icons/ti";
 
 import "./videoImageLibrary.css";
 
 const VideoImageLibrary = () => {
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState({});
-  // const [urls, setUrls] = useState({});
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
@@ -19,50 +22,17 @@ const VideoImageLibrary = () => {
           `https://images-api.nasa.gov/search?q=${searchText}`
         );
         const jsonData = await fetchedData.json();
-        return jsonData.collection.items.length > 5
-          ? jsonData.collection.items.slice(0, 5)
-          : jsonData.collection.items;
+        jsonData.collection.items.length > 4
+          ? setData(jsonData.collection.items.slice(0, 5))
+          : setData(jsonData.collection.items);
       }
     } catch (error) {
       console.log("data fetch error");
     }
   };
 
-  // const fetchImage = async (list) => {
-  //   let links = [];
-  //   try {
-  //     if (list !== undefined && list !== "") {
-  //       list.map(async (item) => {
-  //         const fetchedImage = await fetch(`${item.href}`);
-  //         const jsonData = await fetchedImage.json();
-  //         links.push(jsonData[0]);
-  //       });
-  //       return links;
-  //     }
-  //   } catch (error) {
-  //     console.log("fetchImage failed !");
-  //   }
-  // };
-
   useEffect(() => {
-    const fetchAPI = async () => {
-      const list = await fetchData(searchText);
-      setData(list);
-      // const links = await fetchImage(list);
-      // setUrls(links);
-      // if (data !== undefined && data.length > 0) {
-      //   if (urls !== undefined && urls.length === 5) {
-      //     data.map((item, i) => {
-      //       urls.map((url, j) => {
-      //         if (i === j) {
-      //           return (item = { ...item, href: url });
-      //         }
-      //       });
-      //     });
-      //   }
-      // }
-    };
-    fetchAPI();
+    fetchData(searchText);
   }, [searchText]);
 
   return (
@@ -93,7 +63,13 @@ const VideoImageLibrary = () => {
           );
         })
       ) : (
-        <div className="placeholder">Empty here...</div>
+        <div className="placeholder">
+          <SiNasa className="searchIcon100x100" />
+          <TiTimesOutline className="searchIcon50x50" />
+          <MdImageSearch className="searchIcon100x100" />
+          <TiTimesOutline className="searchIcon50x50" />
+          <VscRocket className="searchIcon100x100" />
+        </div>
       )}
     </div>
   );
