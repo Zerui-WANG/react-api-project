@@ -1,6 +1,6 @@
 import React from "react";
 
-import MarsRoverComp from "../../components/marsRover/marsRover_comp.component";
+import MarsRoverComp from "../../components/marsRover_comp/marsRover_comp.component";
 
 const MarsRover = () => {
   return (
