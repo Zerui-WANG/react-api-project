@@ -2,6 +2,24 @@
 
 ## Extern libraries imports
 
+- Storybook
+
+```
+npx sb init
+```
+
+- React Bootstrap
+
+```
+npm install react-bootstrap bootstrap@5.1.3
+```
+
+OR
+
+```
+yarn add react-bootstrap bootstrap@5.1.3
+```
+
 - React Spinners
 
 ```
@@ -54,7 +72,25 @@ yarn add react-player
 
 ```
 npm start
+```
+
+OR
+
+```
 yarn start
+```
+
+## Storybook start
+
+```
+# Starts Storybook in development mode
+npm run storybook
+```
+
+OR
+
+```
+yarn storybook
 ```
 
 ## API

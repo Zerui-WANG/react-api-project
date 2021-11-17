@@ -63,7 +63,7 @@ const VideoImageLibrary = () => {
           );
         })
       ) : (
-        <div className="placeholder">
+        <div className="icons">
           <SiNasa className="searchIcon100x100" />
           <TiTimesOutline className="searchIcon50x50" />
           <MdImageSearch className="searchIcon100x100" />

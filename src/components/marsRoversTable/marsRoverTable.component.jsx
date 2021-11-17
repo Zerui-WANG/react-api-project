@@ -2,11 +2,18 @@ import React from "react";
 import { Table } from "react-bootstrap";
 
 const MarsRoverTable = ({
-  textRover={id:1,name:"storybook",landiing_score:1,launch_date:"00-00-0000",status:"A"}, 
-  border}) => {
-
-    return (
-        <Table responsive style={{border:border}}>
+  textRover = {
+    id: 1,
+    name: "storybook",
+    landiing_score: 1,
+    launch_date: "00-00-0000",
+    status: "A",
+  },
+  border,
+}) => {
+  return (
+    <div>
+      <Table responsive style={{ border: border }}>
         <thead>
           <tr>
             <th></th>
@@ -25,12 +32,11 @@ const MarsRoverTable = ({
             <td>{textRover.landing_date}</td>
             <td>{textRover.launch_date}</td>
             <td>{textRover.status}</td>
-
           </tr>
         </tbody>
       </Table>
-    );
-
-}
+    </div>
+  );
+};
 
 export default MarsRoverTable;
