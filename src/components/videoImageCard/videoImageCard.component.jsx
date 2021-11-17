@@ -13,27 +13,28 @@ const VideoImageCard = ({
 }) => {
   const [availableImgLink, setAvailableImgLink] = useState("");
   const [availableVideoLink, setAvailableVideoLink] = useState("");
+  const [data, setData] = useState({});
 
   const fetchUrl = async () => {
     try {
       const response = await fetch(`${href}`);
       const jsonData = await response.json();
-      return jsonData;
+      setData(jsonData);
     } catch (error) {
       console.log("fetch images&videos failed !");
     }
   };
 
-  const checkIfImgVideo = (fetchedUrl) => {
-    if (fetchedUrl.length > 1) {
-      const sources = fetchedUrl.reduce((result, url) => {
+  const checkIfImgVideo = () => {
+    if (data.length > 1) {
+      const sources = data.reduce((result, url) => {
         if (url.split(".").pop() === "jpg") {
           result.push(url);
         }
         return result;
       }, []);
       setAvailableImgLink(sources[0]);
-      const videoSources = fetchedUrl.reduce((result, url) => {
+      const videoSources = data.reduce((result, url) => {
         if (url.split(".").pop() === "mp4") {
           result.push(url);
         }
@@ -44,11 +45,8 @@ const VideoImageCard = ({
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const fetchedUrl = await fetchUrl();
-      checkIfImgVideo(fetchedUrl);
-    };
-    fetchData();
+    fetchUrl();
+    checkIfImgVideo();
   }, [href]);
 
   return (
