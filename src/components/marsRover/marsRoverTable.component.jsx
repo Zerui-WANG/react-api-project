@@ -1,10 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-const MarsRoverTable = ({textRover}) => {
+const MarsRoverTable = ({
+  textRover={id:1,name:"storybook",landiing_score:1,launch_date:"00-00-0000",status:"A"}, 
+  border}) => {
 
     return (
-        <Table responsive>
+        <Table responsive style={{border:border}}>
         <thead>
           <tr>
             <th></th>

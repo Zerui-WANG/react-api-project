@@ -1,11 +1,18 @@
 import React from "react";
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import './marsRoverDropdown.css';
 
-const MarsRoverDropdown = ({handleSelectOnCamera}) => {
+const MarsRoverDropdown = ({
+  handleSelectOnCamera,
+  text, 
+  loading = false, 
+  disabled = false,
+  isDark,
+}) => {
 
     return (
-    <DropdownButton id="dropdown-item-button" title="Camera" onSelect={handleSelectOnCamera}>
+    <DropdownButton id={`dropdown-item-button-${isDark}`} title={text} onSelect={handleSelectOnCamera} disabled={loading || disabled}>
         <Dropdown.Item as="button" eventKey="FHAZ">FHAZ</Dropdown.Item>
         <Dropdown.Item as="button" eventKey="RHAZ">RHAZ</Dropdown.Item>
         <Dropdown.Item as="button"eventKey="MAST">MAST</Dropdown.Item>
