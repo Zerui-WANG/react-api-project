@@ -11,10 +11,8 @@ const MarsRoverComp = () => {
   //set the value for the choice of the camera
   const [valueCamera,setValueCamera]=useState('');
   const handleSelectOnCamera=(e)=>{
-    console.log(e);
     setValueCamera(e)
   }
-  console.log("camera"+valueCamera.length);
   const [imgSrc, setImgSrc] = useState("");
   const [textRover, setText] = useState("");
   const [dataNotNull, setData] = useState("");
@@ -24,29 +22,22 @@ const MarsRoverComp = () => {
   const fetchData = async () => {
     if(valueCamera !== ''){ 
       const api_query = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=${valueCamera}&api_key=${nasa_api_key}`;
-      console.log(api_query);
       const metadata = await fetch(api_query);
       const json = await metadata.json();
-      console.log(json);
       if (json.photos.length !== 0){
         setData(true);
-        console.log({image});
         const imgURL = json.photos[0].img_src;
         const rover = json.photos[0].rover;
-        console.log(rover);
         setImgSrc((img) => (img = imgURL));
         setText((text) => (text = rover)); 
       }
       else{
-        console.log("La caméra n'a pas de données")
         setData(false); 
-        console.log({image});
       }
       
     }    
     else{
       image = "undefined";
-      console.log("no data")
     }
   };
 
