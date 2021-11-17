@@ -36,6 +36,9 @@ const Navbar = () => {
           <Link to="/VideoImageLibrary" className="navLink">
             Nasa's Image and Video Library
           </Link>
+          <Link to="/exoplanetarchive" className="navLink">
+            Exoplanetarchive
+          </Link>
           <Toggle theme={theme} toggleTheme={themeToggler} />
         </div>
       </div>
