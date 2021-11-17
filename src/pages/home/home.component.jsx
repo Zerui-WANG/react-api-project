@@ -15,8 +15,8 @@ const Home = () => {
         `https://api.nasa.gov/planetary/apod?api_key=${nasa_api_key}`
       );
       const res = await data.json();
-      setApod((apod) => (apod = res));
-      setImgSrc((img) => (img = res.url));
+      setApod(res);
+      setImgSrc(res.url);
     } catch (err) {
       console.log("Black holed : probably no wifi");
     }
